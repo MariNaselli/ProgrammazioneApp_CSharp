@@ -1,9 +1,14 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using AppCourseUtils;
-using ArrayManagement;
-using System;
-using static AppCourseUtils.MathUtils;
-using static AppCourseUtils.StringUtils;
+//using AppCourseUtils;
+//using ArrayManagement;
+//using System;
+//using static AppCourseUtils.MathUtils;
+//using static AppCourseUtils.StringUtils;
+public class Program
+{
+    // Uncomment the following line to resolve.
+    static void Main() {}
+}
 
 //Console.WriteLine("Probando Array..");
 
@@ -25,12 +30,12 @@ using static AppCourseUtils.StringUtils;
 //uint resultadoRec = MathUtils.FibonacciIter(n);
 //Console.WriteLine(resultadoRec);
 
-Console.WriteLine("Ingresa una palabra");
-string? palabra = Console.ReadLine();
-if (!string.IsNullOrEmpty(palabra))
-{
-    Console.WriteLine(StringUtils.ExtractVowelsAndConsonants(palabra));
-}
+//Console.WriteLine("Ingresa una palabra");
+//string? palabra = Console.ReadLine();
+//if (!string.IsNullOrEmpty(palabra))
+//{
+//    Console.WriteLine(StringUtils.ExtractVowelsAndConsonants(palabra));
+//}
 
 
 
