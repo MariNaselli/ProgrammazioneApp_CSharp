@@ -8,6 +8,7 @@ namespace OOPLessons.Tests
         [Fact]
         public void Test1()
         {
+            //
             Point2D point0_0 = new Point2D();
             Point2D point1_1 = new Point2D(1);
             Point2D point1_2 = new Point2D(1, 2);
