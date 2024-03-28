@@ -2,7 +2,7 @@ using FluentAssertions;
 
 namespace OOPLessons.Tests
 {
- 
+
     public class Point2DTests
     {
         [Fact]
@@ -18,8 +18,9 @@ namespace OOPLessons.Tests
 
             p1.DistanceFromOrigin().Should().Be(5d);
 
-            //Point2D.Origin.X = 10;
-            //Point2D.Origin.Y = 100;
+
+            Point2D.Origin.X = 10;
+            Point2D.Origin.Y = 100;
 
             p1.DistanceFromOrigin().Should().Be(5d);
 
@@ -28,7 +29,7 @@ namespace OOPLessons.Tests
             Point2D p2 = new Point2D(1, 1);
             Point2D p3 = new Point2D(4, 5);
 
-            p2.DistanceFromToOtherPoint(p3).Should().Be(5d);
+            p2.DistanceFromOtherPoint(p3).Should().Be(5d);
 
 
             //point0_0.Y.Should().Be(0);
@@ -49,6 +50,39 @@ namespace OOPLessons.Tests
             {
                 p1.DistanceFromOrigin();
             }
+        }
+
+        [Fact]
+        public void TestInnerClass()
+        {
+            Point2D p1 = new Point2D(3, 3);
+
+            object p2 = new Point2D(3);
+
+            Point2D p3 = new Point2D(3, 3);
+
+            p2.Equals(p1).Should().BeTrue();
+            p1.Equals(p2).Should().BeTrue();
+
+            p1.Equals("Sorpresa").Should().BeFalse();
+
+            p1.Equals(p3);
+        }
+
+        [Fact]
+        public void TestDateTime()
+        {
+            DateTime dt1 = new DateTime(2025, 1, 1);
+            DateTime dt2 = new DateTime(2026, 1, 1);
+
+            double days = (dt2 - dt1).TotalDays;
+
+            //var nextYear = dt.AddYears(1);
+
+            //nextYear.Year.Should().Be(2025);
+            //nextYear.Month.Should().Be(3);
+            //nextYear.Day.Should().Be(1);
+
         }
     }
 }
