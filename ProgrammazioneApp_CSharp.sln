@@ -29,15 +29,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleNet48", "TestCon
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OOPLessons", "OOPLessons", "{10CAD46D-77FD-4B55-B700-53CBD603258D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPLessons", "OOPLessons\OOPLessons.csproj", "{BB3EDF85-686E-4929-A9A4-897B567265F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOPLessons", "OOPLessons\OOPLessons.csproj", "{BB3EDF85-686E-4929-A9A4-897B567265F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPLessons.Tests", "OOPLessons.Tests\OOPLessons.Tests.csproj", "{6FF19D2D-8FF3-4DA4-AB42-3AF7CAA7F37E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOPLessons.Tests", "OOPLessons.Tests\OOPLessons.Tests.csproj", "{6FF19D2D-8FF3-4DA4-AB42-3AF7CAA7F37E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fiscal", "Fiscal", "{5D6E8F7C-9C88-4118-B9D4-A0491587FC57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPPClassLibrary.Fiscal", "OPPClassLibrary.Fiscal\OPPClassLibrary.Fiscal.csproj", "{D028AE58-52E8-4762-A853-DA3D29F09980}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OPPClassLibrary.Fiscal", "OPPClassLibrary.Fiscal\OPPClassLibrary.Fiscal.csproj", "{D028AE58-52E8-4762-A853-DA3D29F09980}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPPClassLibraryFiscal.Tests", "OPPClassLibraryFiscal.Tests\OPPClassLibraryFiscal.Tests.csproj", "{ABF94F89-BC86-489D-A24B-636137BBA38B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OPPClassLibraryFiscal.Tests", "OPPClassLibraryFiscal.Tests\OPPClassLibraryFiscal.Tests.csproj", "{ABF94F89-BC86-489D-A24B-636137BBA38B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinForm", "WinForm", "{24877E1D-3FFD-43E1-BEF4-C87356ED94C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiscalWinFormsApp", "FiscalWinFormsApp\FiscalWinFormsApp.csproj", "{2B374F0E-CA04-4E79-BFB6-CB62B66783D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +101,10 @@ Global
 		{ABF94F89-BC86-489D-A24B-636137BBA38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABF94F89-BC86-489D-A24B-636137BBA38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABF94F89-BC86-489D-A24B-636137BBA38B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B374F0E-CA04-4E79-BFB6-CB62B66783D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B374F0E-CA04-4E79-BFB6-CB62B66783D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B374F0E-CA04-4E79-BFB6-CB62B66783D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B374F0E-CA04-4E79-BFB6-CB62B66783D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +123,7 @@ Global
 		{6FF19D2D-8FF3-4DA4-AB42-3AF7CAA7F37E} = {10CAD46D-77FD-4B55-B700-53CBD603258D}
 		{D028AE58-52E8-4762-A853-DA3D29F09980} = {5D6E8F7C-9C88-4118-B9D4-A0491587FC57}
 		{ABF94F89-BC86-489D-A24B-636137BBA38B} = {5D6E8F7C-9C88-4118-B9D4-A0491587FC57}
+		{2B374F0E-CA04-4E79-BFB6-CB62B66783D9} = {24877E1D-3FFD-43E1-BEF4-C87356ED94C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BB4E725C-6985-4C59-B9E6-978B73E9F1B8}
