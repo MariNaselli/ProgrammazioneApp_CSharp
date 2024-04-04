@@ -1,72 +1,36 @@
-﻿namespace OPPClassLibrary.Fiscal
+﻿using System.Linq;
+using System.Reflection;
+
+namespace OPPClassLibrary.Fiscal
 {
     public class Person
-
     {
-        //private readonly string _firstName; //campi-campo
-        //public string FirstName =>
-        //    _firstName;
 
-        //public string FirstName
-        //{
-        //    get
-        //    {
-        //        return _firstName;
-        //    }
-        //}
+        string firstName = string.Empty;
+        string lastName = string.Empty;
+        DateOnly dateOfBirth = new DateOnly();
+        string placeOfBirth = string.Empty;
+        Gender gender;
+        MaritalStatus maritalStatus;
 
-
-        //private readonly string _lastName;
-        //private readonly DateOnly _dateOfBirth;
-        //private readonly string _placeOfBirth;
-        //private string _fiscalCode;
-        //private readonly Gender _gender;
-        //private readonly MaritalStatus _maritalStatus;
-
-
-        
-        private static readonly DateOnly MinValidDate = new DateOnly(1900, 1, 1);
-        
-        //Auto property in solo get.Readonly
-        public string FirstName { get; }
-
-        public string LastName { get; }
-        public DateOnly DateOfBirth { get; }
-
-        public string PlaceOfBirth { get; }
-
-        public string FiscalCode { get; }
-
-        public Gender Gender { get; }
-
-        public MaritalStatus MaritalStatus { get; }
-
-        public Person
-        (
-            string firstName,
-            string lastName,
-            DateOnly dateOfBirth,
-            string placeOfBirth,
-            string fiscalCode,
-            Gender gender,
-            MaritalStatus maritalStatus
-        )
-
-
+        public Person(string firstName, string lastName, DateOnly dateOfBirth, string placeOfBirth, Gender gender, MaritalStatus maritalStatus)
         {
-            //firstNam(firstName, nameof(firstName));
-            //ChekName(lastName, nameof(lastName));
-
-            FirstName = SanitizeName(firstName);
-            LastName = SanitizeName(lastName);
-            DateOfBirth = SanitizeDateOfBirth(dateOfBirth);
-            PlaceOfBirth = SanitizeName(placeOfBirth);
-            FiscalCode = fiscalCode;
-            Gender = gender;
-            MaritalStatus = maritalStatus;
+            this.FirstName = SanitizeName(firstName);
+            this.LastName = SanitizeName(lastName);
+            this.DateOfBirth = SanitizeDateOfBirth(dateOfBirth);
+            this.PlaceOfBirth = placeOfBirth;
+            this.Gender = gender;
+            this.MaritalStatus = maritalStatus;
         }
 
-        private static string SanitizeName(string name)
+        public string FirstName { get => firstName; set => firstName = value; }
+        public string LastName { get => lastName; set => lastName = value; }
+        public DateOnly DateOfBirth { get => dateOfBirth; set => dateOfBirth = value; }
+        public string PlaceOfBirth { get => placeOfBirth; set => placeOfBirth = value; }
+        public Gender Gender { get => gender; set => gender = value; }
+        public MaritalStatus MaritalStatus { get => maritalStatus; set => maritalStatus = value; }
+
+        private string SanitizeName(string name)
         {
             string paramName = nameof(name);
             const int nameMimLen = 2;
@@ -74,7 +38,6 @@
 
             if (name is null)
             {
-                //throw new ArgumentNullException("firstName");
                 throw new ArgumentNullException(paramName);
             }
 
@@ -97,44 +60,41 @@
                 {
                     throw new ArgumentException($"{paramName} cannot contain char {c}");
                 }
-
             }
 
             return sanitizedName;
         }
 
-        private DateOnly SanitizeDateOfBirth(DateOnly date) =>
-            IsDateOfBirthValid(date) ? date : throw new ArgumentException($"Invalid date of birth: {DateOfBirth.ToString("yyyy-mm-dd")}");
+        private DateOnly SanitizeDateOfBirth(DateOnly date)
+        {
+            DateOnly minValidDate = new DateOnly(1900, 1, 1);
+            if(date <= DateOnly.FromDateTime(DateTime.Today) && 
+                date > minValidDate)
+            {
+                return date;
+            }
+            else
+            {
+                throw new ArgumentException($"Invalid date of birth: {DateOfBirth.ToString("yyyy-mm-dd")}");
+            }
+        }
 
-        private static bool IsDateOfBirthValid(DateOnly date) =>
-            date <= DateOnly.FromDateTime(DateTime.Today)
-            && (date >= MinValidDate);
+        public string Saludar()
+        {
+            return $"Hola {FirstName}";
+        }
+
+        public string SaludarFormalmente()
+        {
+            return $"Salve {LastName} {FirstName}";
+        }
+
+        public override string ToString()
+        {
+            return $"Hi, I'm {LastName}, {FirstName} {LastName}";
+        }
 
     }
-
-
-
-
-
-    //nome e congnome no null y due caratteri
-
-    //[Flags]
-    //public enum Options
-    //{
-    //    Option1 = 0, //00000000000000000000000
-    //    Option2 = 1, //00000000000000000000001
-    //    Option3 = 2, //00000000000000000000010
-    //    Option4 = 3, //00000000000000000000100
-    //    Option5 = 8,
-    //}
-
-    //public enum MyBool
-    //{
-    //    True,
-    //    False
-    //}
-
-
 
 
 }
