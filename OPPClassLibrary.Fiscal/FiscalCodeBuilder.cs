@@ -12,28 +12,28 @@ namespace OPPClassLibrary.Fiscal
 
         public static string BuildFiscalCode(Person person)
         {
-            // 1. Obtener los primeros tres caracteres del apellido
+            // Obtener los primeros tres caracteres del apellido
             string lastNamePart = GetLastNamePart(person.LastName);
 
-            // 2. Obtener los primeros tres caracteres del nombre
+            // Obtener los primeros tres caracteres del nombre
             string firstNamePart = GetFirstNamePart(person.FirstName);
 
-            // 3. Tomar los dos últimos dígitos del año de nacimiento
+            // Tomar los dos últimos dígitos del año de nacimiento
             string yearPart = (person.DateOfBirth.Year).ToString().Substring(2, 2);
 
-            // 4. Asociar una letra del alfabeto a cada mes y usarla para representar el mes de nacimiento
+            // Asociar una letra del alfabeto a cada mes y usarla para representar el mes de nacimiento
             string monthPart = GetMonthPart(person.DateOfBirth.Month);
 
-            // 5. Tomar el día de nacimiento y ajustarlo si es necesario para representar el género
+            // Tomar el día de nacimiento y ajustarlo si es necesario para representar el género
             string dayPart = GetDayPart(person.DateOfBirth.Day, person.Gender);
 
-            // 6. Obtener el código del comune o del país de nacimiento
+            // Obtener el código del comune o del país de nacimiento
             string birthPlacePart = GetBirthPlacePart(person.PlaceOfBirth);
 
-            // 7. Calcular el carácter de control
+            // Calcular el carácter de control
             string controlCharacter = CalculateControlCharacter($"{lastNamePart}{firstNamePart}{yearPart}{monthPart}{dayPart}{birthPlacePart}");
 
-            // 8. Combinar todas las partes para formar el código fiscal completo
+            // Combinar todas las partes para formar el código fiscal completo
             string fiscalCode = $"{lastNamePart}{firstNamePart}{yearPart}{monthPart}{dayPart}{birthPlacePart}{controlCharacter}";
             //string fiscalCode = $"{lastNamePart}{firstNamePart}{yearPart}{monthPart}{dayPart}{birthPlacePart}";
 
@@ -42,7 +42,7 @@ namespace OPPClassLibrary.Fiscal
             return fiscalCode.ToUpper(); // Convertir a mayúsculas y devolver el código fiscal
         }
 
-        // Función para obtener los primeros tres caracteres del apellido
+        // Función para obtener los tres caracteres del apellido
         private static string GetLastNamePart(string lastName)
         {
             // Eliminar espacios y convertir a mayúsculas
