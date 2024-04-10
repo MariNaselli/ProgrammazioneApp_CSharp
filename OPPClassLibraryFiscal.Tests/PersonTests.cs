@@ -5,7 +5,7 @@ namespace OPPClassLibraryFiscal.Tests
         [Fact]
         public void PersonTest()
         {
-            Person person = new Person();
+         
         }
     }
 }
