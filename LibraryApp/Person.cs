@@ -8,14 +8,20 @@ namespace LibraryApp
 {
     public class Person
     {
-        public Person(string name, string lastName)
+        public Person(string lastName, string name)
         {
-            Name = name;
             LastName = lastName;
+            Name = name;
+            
         }
 
-        public string Name { get; set; }
         public string LastName { get; set; }
+        public string Name { get; set; }
+
+
+        
     }
+
+
 }
     

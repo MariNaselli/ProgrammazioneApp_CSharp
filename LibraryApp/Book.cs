@@ -19,21 +19,21 @@ namespace LibraryApp
             Person editor,
             int editionNumber,
             string isbnCode,
-            string[] genres
+            List<BookCategory> categories
             ) : base(id, ubication, title, publicationYear)
         {
             Authors = authors;
             Editor = editor;
             EditionNumber = editionNumber;
             IsbnCode = isbnCode;
-            Genres = genres;
+            Categories = categories;
         }
 
-        public Person[] Authors { get; set; }
-        public Person Editor { get; set; }
-        public int EditionNumber { get; set; }
-        public string IsbnCode { get; set; }
-        public string[] Genres { get; set; }
+        public Person[] Authors { get;}
+        public Person Editor { get; }
+        public int EditionNumber { get; }
+        public string IsbnCode { get; }
+        public List<BookCategory> Categories { get; }
 
     }
 }

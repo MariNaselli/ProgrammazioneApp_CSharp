@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace LibraryApp
 {
+
+    public enum MediaType
+    {
+        Print,
+        Digital
+    }
     public class Periodical : Document
     {
         public Periodical
@@ -16,7 +22,7 @@ namespace LibraryApp
             int publicationYear,
             string issueNumber,
             string issnCode,
-            string mediaType
+            MediaType mediaType
             ) : base(id, ubication, title, publicationYear)
         {
          
@@ -26,7 +32,7 @@ namespace LibraryApp
         }
         public string IssueNumber { get; set; }
         public string IssnCode { get; set; }
-        public string MediaType { get; set; }
+        public MediaType MediaType { get; set; }
 
     }
 }
