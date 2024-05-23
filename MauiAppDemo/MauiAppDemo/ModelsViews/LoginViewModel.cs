@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MauiAppDemo.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,39 +11,58 @@ namespace MauiAppDemo.ModelsViews;
 
 public partial class LoginViewModel : ObservableObject
 {
+   
+    [ObservableProperty]
+    private string user = string.Empty;
 
-    
+    [ObservableProperty]
+    private string password = string.Empty;
+
+    //[ObservableProperty]
+    //private bool isOk = false;
+
+    public IAsyncRelayCommand LoginCommand { get; }
+
     public LoginViewModel()
     {
-        User = string.Empty;
-        Password = string.Empty;
-        IsOk = false;
+        LoginCommand = new AsyncRelayCommand(OnLoginClickedAsync);
+        NavigateToCreateAccountCommand = new AsyncRelayCommand(NavigateToCreateAccountAsync);
     }
 
-    [ObservableProperty]
-    string user;
-
-    [ObservableProperty]
-    string password;
-
-    [ObservableProperty]
-    bool isOk;
-
-    [RelayCommand]
-    void Login()
+    private async Task OnLoginClickedAsync()
     {
         if (string.IsNullOrWhiteSpace(User) || string.IsNullOrWhiteSpace(Password))
         {
+            if (Application.Current != null && Application.Current.MainPage != null)
+            {
+                await Application.Current.MainPage.DisplayAlert("Login Failed", "Please enter both username and password.", "OK");
+            }
             return;
         }
 
-        IsOk = false;
+        //IsOk = false;
 
         if (User == "admin" && Password == "admin")
         {
-            IsOk = true;
-
+            //IsOk = true;
+            await Shell.Current.GoToAsync("//home");
         }
+        else
+        {
+            //IsOk = false;
+            if (Application.Current != null && Application.Current.MainPage !=null)
+            {
+                await Application.Current.MainPage.DisplayAlert("Login Failed", "Invalid username or password. Please try again.", "OK");
+            }
+            
+        }
+    }
 
+    public IAsyncRelayCommand NavigateToCreateAccountCommand { get; }
+
+
+    private async Task NavigateToCreateAccountAsync()
+    {
+        await Shell.Current.GoToAsync("//createaccount");
     }
 }

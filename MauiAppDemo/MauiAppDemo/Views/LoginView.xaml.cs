@@ -4,9 +4,9 @@ namespace MauiAppDemo.Views;
 
 public partial class LoginView : ContentPage
 {
-    public LoginView(LoginViewModel lvm)
+    public LoginView()
     {
         InitializeComponent();
-        BindingContext = lvm;
+        BindingContext = new LoginViewModel();
     }
 }

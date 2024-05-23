@@ -27,7 +27,7 @@
                    Text="Welcome!"
                    TextColor="#202020"/>
                     <Label FontFamily="Medium"
-                   Text="Log in to continue"
+                   Text="Login to continue"
                    TextColor="#A3A3A4"/>
                     <Grid Margin="0,30,0,0" ColumnDefinitions=".2*, .8*">
                         <RoundRectangle
@@ -66,7 +66,7 @@
                       VerticalOptions="Center"/>
                         <Entry Grid.Column="1"
                        Placeholder="*************"
-                       IsPassword="False"
+                       IsPassword="True"
                        Text="{Binding Password}"
                        VerticalOptions="Center"/>
 
@@ -84,7 +84,6 @@
 
                     <Label Margin="0,20,0,-10"
                 HorizontalOptions="Center"
-                Text="{Binding IsOk}"
                 TextColor="Green"
                 />
 
@@ -95,15 +94,17 @@
                    TextDecorations="Underline"/>
 
                     <Button
-                Margin="0,30,0,0"
+                Margin="0,30,0,20"
                 BackgroundColor="#FBF6FD"
                 HeightRequest="60"
                 Text="Create your Account"
-                TextColor="#A3A3A4"/>
+                TextColor="#A3A3A4"
+                Command="{Binding NavigateToCreateAccountCommand}"       />
 
                 </VerticalStackLayout>
             </ScrollView>
         </Grid>
 
     </Grid>
+        
 </ContentPage>

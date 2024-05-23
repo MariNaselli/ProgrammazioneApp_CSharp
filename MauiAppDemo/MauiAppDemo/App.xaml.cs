@@ -5,11 +5,12 @@ namespace MauiAppDemo
 {
     public partial class App : Application
     {
-        public App(LoginViewModel lvm)
+        public App()
         {
             InitializeComponent();
 
-            MainPage = new LoginView(lvm);
+            MainPage = new AppShell();
+
         }
     }
 }

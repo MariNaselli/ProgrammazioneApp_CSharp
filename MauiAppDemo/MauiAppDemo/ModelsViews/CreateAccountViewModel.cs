@@ -8,11 +8,11 @@ using System.Windows.Input;
 
 namespace MauiAppDemo.ModelsViews;
 
-public partial class HomePageViewModel : ObservableObject
+public partial class CreateAccountViewModel : ObservableObject
 {
     public ICommand NavigateBackCommand { get; }
 
-    public HomePageViewModel()
+    public CreateAccountViewModel()
     {
         NavigateBackCommand = new Command<string>(OnNavigateBack);
     }
