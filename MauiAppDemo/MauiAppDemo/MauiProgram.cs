@@ -1,8 +1,8 @@
-﻿using MauiAppLogin.ModelView;
-using MauiAppLogin.Views;
+﻿using MauiAppDemo.ModelsViews;
+using MauiAppDemo.Views;
 using Microsoft.Extensions.Logging;
 
-namespace MauiAppLogin
+namespace MauiAppDemo
 {
     public static class MauiProgram
     {
@@ -15,13 +15,10 @@ namespace MauiAppLogin
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-           
                 });
 
             builder.Services.AddSingleton<LoginView>();
             builder.Services.AddSingleton<LoginViewModel>();
-            
-
 
 #if DEBUG
             builder.Logging.AddDebug();

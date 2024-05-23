@@ -21,6 +21,8 @@
                             CornerRadius="30,30,0,0"
                             Fill="White"/>
 
+            <ScrollView>
+
             <VerticalStackLayout Margin="30,0,30,0">
                 <Label FontSize="Medium"
                        Text="Welcome!"
@@ -65,7 +67,6 @@
                           VerticalOptions="Center"/>
                     <Entry Grid.Column="1"
                            Placeholder="*************"
-                           PlaceholderColor="#feb6b8"
                            IsPassword="False"
                            Text="{Binding Password}"
                            VerticalOptions="Center"/>
@@ -102,6 +103,7 @@
                     TextColor="#A3A3A4"/>
 
             </VerticalStackLayout>
+            </ScrollView>
         </Grid>
 
     </Grid>

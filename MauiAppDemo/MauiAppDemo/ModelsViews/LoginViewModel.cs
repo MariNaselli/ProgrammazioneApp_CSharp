@@ -6,15 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MauiAppLogin.ModelView;
+namespace MauiAppDemo.ModelsViews;
 
 public partial class LoginViewModel : ObservableObject
 {
 
-    private readonly NavigationManager _navigationManager;
-    public LoginViewModel(NavigationManager navigationManager)
+    
+    public LoginViewModel()
     {
-        _navigationManager = navigationManager;
         User = string.Empty;
         Password = string.Empty;
         IsOk = false;
@@ -42,8 +41,6 @@ public partial class LoginViewModel : ObservableObject
         if (User == "admin" && Password == "admin")
         {
             IsOk = true;
-            await _navigationManager.NavigateToAsync("//home");
-
 
         }
 

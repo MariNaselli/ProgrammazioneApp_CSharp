@@ -14,17 +14,17 @@
 		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
 
 		<OutputType>Exe</OutputType>
-		<RootNamespace>MauiAppLogin</RootNamespace>
+		<RootNamespace>MauiAppDemo</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>MauiAppLogin</ApplicationTitle>
+		<ApplicationTitle>MauiAppDemo</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.mauiapplogin</ApplicationId>
+		<ApplicationId>com.companyname.mauiappdemo</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -47,24 +47,13 @@
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiImage Remove="Resources\Images\dotnet_bot.png" />
-	  <MauiImage Remove="Resources\Images\image_2.jpg" />
-	  <MauiImage Remove="Resources\Images\image_logo.jpg" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Remove="Resources\Images\dotnet_bot.png" />
-	  <None Remove="Resources\Images\image_2.jpg" />
-	  <None Remove="Resources\Images\image_logo.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -75,7 +64,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\HomePage.xaml">
+	  <Compile Update="Views\HomePageView.xaml.cs">
+	    <DependentUpon>HomePageView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\HomePageView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\LoginView.xaml">
