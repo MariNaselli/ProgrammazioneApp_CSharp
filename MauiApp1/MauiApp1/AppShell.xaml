@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--Define la estructura de navegación de la aplicación. 
+    Puedes definir FlyoutItem, TabBar, ShellContent, etc.-->
+<Shell
+    x:Class="MauiApp1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp1"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MauiApp1">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+</Shell>
+
+<!--Shell es un contenedor de nivel superior que organiza las páginas 
+    y la navegación de tu aplicación. 
+    Permite crear aplicaciones con menús de navegación modernos, 
+    como menús desplegables (flyouts) y barras de pestañas (tabs).
+    
+    FlyoutItem se utiliza para definir elementos en un menú desplegable 
+    (flyout menu). Es ideal para aplicaciones que tienen una navegación principal
+    basada en un menú lateral.
+    
+    TabBar se utiliza para definir una barra de pestañas en la parte inferior 
+    de la pantalla, permitiendo la navegación entre diferentes secciones de 
+    la aplicación mediante pestañas.
+    
+    ShellContent es un contenedor para una página específica en la navegación. 
+    Se utiliza dentro de FlyoutItem, Tab, o directamente dentro de Shell
+    
+    Tab es un contenedor que se utiliza dentro de TabBar 
+    para definir una pestaña específica y su contenido.
+    
+    Puedes combinar estos componentes para crear una navegación compleja 
+    y estructurada
+    -->
