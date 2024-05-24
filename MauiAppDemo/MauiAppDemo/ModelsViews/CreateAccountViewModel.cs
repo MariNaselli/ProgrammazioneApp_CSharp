@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
+
 namespace MauiAppDemo.ModelsViews;
 
 public partial class CreateAccountViewModel : ObservableObject
@@ -32,14 +33,14 @@ public partial class CreateAccountViewModel : ObservableObject
     [ObservableProperty]
     private string address;
 
-    [ObservableProperty]
-    private ObservableCollection<string> country;
+    //[ObservableProperty]
+    //private ObservableCollection<string> country;
 
-    [ObservableProperty]
-    private bool acceptsPrivacyPolicy;
+    //[ObservableProperty]
+    //private bool acceptsPrivacyPolicy;
 
-    [ObservableProperty]
-    private bool acceptsMarketing;
+    //[ObservableProperty]
+    //private bool acceptsMarketing;
 
     public CreateAccountViewModel()
     {
@@ -57,16 +58,16 @@ public partial class CreateAccountViewModel : ObservableObject
     {
         if (string.IsNullOrWhiteSpace(User) || string.IsNullOrWhiteSpace(Password) || string.IsNullOrWhiteSpace(ConfirmPassword) ||
             string.IsNullOrWhiteSpace(Name) || string.IsNullOrWhiteSpace(LastName) || string.IsNullOrWhiteSpace(Address))
-            {
-            //
+        {
+            //Error
             return;
-            }
+        }
 
-            if (Password != ConfirmPassword)
-            {
-            //
+        if (Password != ConfirmPassword)
+        {
+            //Error
             return;
-            }
+        }
 
             await Shell.Current.GoToAsync(nameof(HomePageView));
     }
