@@ -8,12 +8,6 @@
     Title="MauiAppDemo"
     xmlns:views="clr-namespace:MauiAppDemo.Views"
     >
-
-    <!--<ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />-->
-
     <ShellContent Route="login" ContentTemplate="{DataTemplate views:LoginView}"/>
     <ShellContent Route="home" ContentTemplate="{DataTemplate views:HomePageView}"/>
     <ShellContent Route="createaccount" ContentTemplate="{DataTemplate views:CreateAccountView}"/>

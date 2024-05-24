@@ -11,7 +11,7 @@ namespace MauiAppDemo.ModelsViews;
 
 public partial class LoginViewModel : ObservableObject
 {
-   
+
     [ObservableProperty]
     private string user = string.Empty;
 
@@ -50,11 +50,11 @@ public partial class LoginViewModel : ObservableObject
         else
         {
             //IsOk = false;
-            if (Application.Current != null && Application.Current.MainPage !=null)
+            if (Application.Current != null && Application.Current.MainPage != null)
             {
                 await Application.Current.MainPage.DisplayAlert("Login Failed", "Invalid username or password. Please try again.", "OK");
             }
-            
+
         }
     }
 
