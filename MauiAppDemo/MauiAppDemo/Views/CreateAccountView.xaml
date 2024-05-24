@@ -3,27 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppDemo.Views.CreateAccountView"
              Title="CreateAccountView"
-             xmlns:viewmodel="clr-namespace:MauiAppDemo.ModelsViews">
+             xmlns:viewmodel="clr-namespace:MauiAppDemo.ModelsViews"
+             x:DataType="viewmodel:CreateAccountViewModel">
 
     <Grid RowDefinitions=".3*, .7*">
         <Image Aspect="AspectFill" Source="fondo_image.jpg"/>
         <Grid ColumnDefinitions="*,*">
             <Image Aspect="AspectFit"
-           HeightRequest="100"
-           Source="login_transparente.png"/>
+                   HeightRequest="100"
+                   Source="login_transparente.png"/>
         </Grid>
 
         <Grid Grid.Row="1">
 
             <RoundRectangle Margin="-5,-30,-5,-2"
-                    CornerRadius="30,30,0,0"
-                    Fill="White"/>
+                            CornerRadius="30,30,0,0"
+                            Fill="White"/>
 
             <ScrollView>
                 <VerticalStackLayout Margin="30,0,30,0">
                     <Label Text="Email:" Margin="0,20,0,0" VerticalOptions="Center"/>
                     <Entry Placeholder="example@gmail.com"
-                           Text=""
+                           Text="{Binding User}"
                            VerticalOptions="Center"/>
 
                     <Label Text="Password:" Margin="0,20,0,0" VerticalOptions="Center"/>
@@ -34,13 +35,13 @@
 
                     <Label Text="Confirm your password:" Margin="0,20,0,0" VerticalOptions="Center"/>
                     <Entry Placeholder="*************"
-                    IsPassword="True"
-                    Text="{Binding ConfirmPassword}"
-                    VerticalOptions="Center"/>
+                           IsPassword="True"
+                           Text="{Binding ConfirmPassword}"
+                           VerticalOptions="Center"/>
 
                     <Label Text="Name:" Margin="0,20,0,0" VerticalOptions="Center"/>
-                    <Entry Placeholder="Nome"
-                           Text="{Binding Nome}"
+                    <Entry Placeholder="Name"
+                           Text="{Binding Name}"
                            VerticalOptions="Center"/>
 
                     <Label Text="Last name:" Margin="0,20,0,0" VerticalOptions="Center"/>
@@ -55,38 +56,30 @@
 
                     <Label Text="Country:" Margin="0,20,0,0" VerticalOptions="Center"/>
                     <Picker Title="Select your country"
-                        ItemsSource="{Binding Countries}"
-                        SelectedItem="{Binding SelectedCountry}"
-                        VerticalOptions="Center"
-                        />
-                    
+                    SelectedItem="{Binding Country}"
+                     VerticalOptions="Center" />
+
                     <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center" Spacing="10">
                         <Label Text="I have read and agree to the privacy policy" VerticalOptions="Center" HeightRequest="24"/>
-                        <Switch IsToggled="{Binding IsPrivacyAccepted}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                        <Switch IsToggled="{Binding AcceptsPrivacyPolicy}" HorizontalOptions="Start" VerticalOptions="Center"/>
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center" Spacing="10">
                         <Label Text="I agree to receive marketing communications" VerticalOptions="Center" HeightRequest="24"/>
-                        <Switch IsToggled="{Binding IsMarketingComunications}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                        <Switch IsToggled="{Binding AcceptsMarketing}" HorizontalOptions="Start" VerticalOptions="Center"/>
                     </StackLayout>
 
                     <Button
-                        Command="{Binding LoginCommand}"
+                        Command="{Binding CreateAccountCommand}"
                         Margin="0,30,0,20"
                         BackgroundColor="#feb6b8"
                         HeightRequest="60"
                         FontSize="Small"
-                        Text="Create your accaunt"
-                        TextColor="#202020"
-                        />
-                    <Button Text="Volver al inicio de sesión"
-                    Command="{Binding NavigateBackCommand}"
-                    CommandParameter="login" />
-
+                        Text="Create your account"
+                        TextColor="#202020" />
                 </VerticalStackLayout>
             </ScrollView>
         </Grid>
-
     </Grid>
 
 </ContentPage>

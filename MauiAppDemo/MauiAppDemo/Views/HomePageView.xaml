@@ -9,11 +9,7 @@
             Text="Welcome to Home Page"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />-->
-        <StackLayout>
-            <Button Text="Volver al inicio de sesión"
-                Command="{Binding NavigateBackCommand}"
-                CommandParameter="login" />
-        </StackLayout>
+        
 
     </VerticalStackLayout>
 </ContentPage>

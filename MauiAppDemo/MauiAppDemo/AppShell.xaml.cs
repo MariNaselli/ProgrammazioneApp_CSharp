@@ -8,11 +8,8 @@ namespace MauiAppDemo
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute("login", typeof(LoginView));
-            Routing.RegisterRoute("home", typeof(HomePageView));
-            Routing.RegisterRoute("createaccount", typeof(CreateAccountView));
-
-            BindingContext = new HomePageViewModel();
+            Routing.RegisterRoute(nameof(CreateAccountView), typeof(CreateAccountView));
+            Routing.RegisterRoute(nameof(HomePageView), typeof(HomePageView));
         }
     }
 }

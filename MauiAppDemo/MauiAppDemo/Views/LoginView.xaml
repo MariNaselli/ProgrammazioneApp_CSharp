@@ -99,8 +99,9 @@
                 HeightRequest="60"
                 Text="Create your Account"
                 TextColor="#A3A3A4"
-                Command="{Binding NavigateToCreateAccountCommand}"       />
+                Command="{Binding NavigateToCreateAccountCommand}"  />
 
+                    
 
                 </VerticalStackLayout>
             </ScrollView>

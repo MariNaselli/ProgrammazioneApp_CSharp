@@ -13,23 +13,22 @@ public partial class LoginViewModel : ObservableObject
 {
 
     [ObservableProperty]
-    private string user = string.Empty;
+    private string user;
 
     [ObservableProperty]
-    private string password = string.Empty;
+    private string password;
 
     //[ObservableProperty]
     //private bool isOk = false;
 
-    public IAsyncRelayCommand LoginCommand { get; }
 
     public LoginViewModel()
     {
-        LoginCommand = new AsyncRelayCommand(OnLoginClickedAsync);
-        NavigateToCreateAccountCommand = new AsyncRelayCommand(NavigateToCreateAccountAsync);
+        
     }
 
-    private async Task OnLoginClickedAsync()
+    [RelayCommand]
+    public async Task Login()
     {
         if (string.IsNullOrWhiteSpace(User) || string.IsNullOrWhiteSpace(Password))
         {
@@ -37,7 +36,7 @@ public partial class LoginViewModel : ObservableObject
             {
                 await Application.Current.MainPage.DisplayAlert("Login Failed", "Please enter both username and password.", "OK");
             }
-            return;
+            
         }
 
         //IsOk = false;
@@ -45,7 +44,7 @@ public partial class LoginViewModel : ObservableObject
         if (User == "admin" && Password == "admin")
         {
             //IsOk = true;
-            await Shell.Current.GoToAsync("//home");
+            await Shell.Current.GoToAsync(nameof(HomePageView));
         }
         else
         {
@@ -56,13 +55,12 @@ public partial class LoginViewModel : ObservableObject
             }
 
         }
+
     }
 
-    public IAsyncRelayCommand NavigateToCreateAccountCommand { get; }
-
-
-    private async Task NavigateToCreateAccountAsync()
+    [RelayCommand]
+    public async Task NavigateToCreateAccountAsync()
     {
-        await Shell.Current.GoToAsync("//createaccount");
+        await Shell.Current.GoToAsync(nameof(CreateAccountView));
     }
 }

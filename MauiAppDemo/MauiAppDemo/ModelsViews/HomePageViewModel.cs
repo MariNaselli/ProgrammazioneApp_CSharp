@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +11,14 @@ namespace MauiAppDemo.ModelsViews;
 
 public partial class HomePageViewModel : ObservableObject
 {
-    public ICommand NavigateBackCommand { get; }
 
     public HomePageViewModel()
     {
-        NavigateBackCommand = new Command<string>(OnNavigateBack);
     }
 
-    private async void OnNavigateBack(string route)
+    [RelayCommand]   
+    private async Task OnNavigateBack()
     {
-        await Shell.Current.GoToAsync($"//{route}");
+        await Shell.Current.GoToAsync("..");
     }
 }

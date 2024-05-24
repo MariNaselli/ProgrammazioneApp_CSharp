@@ -1,5 +1,6 @@
 ﻿using MauiAppDemo.ModelsViews;
 using MauiAppDemo.Views;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace MauiAppDemo
@@ -19,6 +20,10 @@ namespace MauiAppDemo
 
             builder.Services.AddSingleton<LoginView>();
             builder.Services.AddSingleton<LoginViewModel>();
+            builder.Services.AddTransient<HomePageView>();
+            builder.Services.AddTransient<HomePageViewModel>();
+            builder.Services.AddTransient<CreateAccountView>();
+            builder.Services.AddTransient<CreateAccountViewModel>();
 
 #if DEBUG
             builder.Logging.AddDebug();
